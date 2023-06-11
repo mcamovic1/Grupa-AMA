@@ -12,7 +12,7 @@
 
 AMA Cosmetics Online Shop je web aplikacija koja omogućuje korisnicima pregled, pretraživanje i kupovinu kozmetičkih proizvoda AMA Cosmetics-a. Ova aplikacija omogućuje korisnicima da istraže širok spektar kozmetičkih proizvoda, pronađu detaljne informacije o svakom proizvodu, dodaju željene proizvode u korpu za kupovinu te sigurno obave proces kupovine.
 
-## Funkcionalnosti
+## Funkcionalnosti:
 
 - Registracija korisnika
 - Pretraživanje proizvoda 
