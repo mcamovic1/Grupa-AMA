@@ -15,7 +15,7 @@ namespace AMA_cosmetics.Data
         }
         public DbSet<Korisnik> Korisnik { get; set; }
         public DbSet<RegistrovaniKorisnik> RegistrovaniKorisnik { get; set; }
-        public DbSet<NeregistrovaniKorisnik> NeregistrovaniKorisnik { get; set; }
+        //public DbSet<NeregistrovaniKorisnik> NeregistrovaniKorisnik { get; set; }
         public DbSet<PremiumKorisnik> PremiumKorisnik { get; set; }
         public DbSet<Proizvod> Prizvod{ get; set; }
         public DbSet<NaruceniProizvodi> NaruceniProizvodi { get; set; }
@@ -31,7 +31,7 @@ namespace AMA_cosmetics.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Korisnik>().ToTable("Korisnik");
-            modelBuilder.Entity<NeregistrovaniKorisnik>().ToTable("NeregistroavniKorisnik");
+            //modelBuilder.Entity<NeregistrovaniKorisnik>().ToTable("NeregistroavniKorisnik");
             modelBuilder.Entity<RegistrovaniKorisnik>().ToTable("RegistroavniKorisnik");
             modelBuilder.Entity<PremiumKorisnik>().ToTable("PremiumKorisnik");
             modelBuilder.Entity<Proizvod>().ToTable("Proizvod");

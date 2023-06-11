@@ -162,9 +162,7 @@ namespace AMA_cosmetics.Controllers
             var proizvod = await _context.Prizvod.FindAsync(id);
             if (proizvod != null)
             {
-                //var userName = _context.GetUserId(User);
-                //var userId = _context.Users.Where(u => u.UserName== User.Identity.Name).Select(u => u.Id).FirstOrDefault();
-                //int userIdInt = int.Parse(userId);
+                
                 var cartItem = _context.Korpa.FirstOrDefault(c => c.IDProizvod == id && c.UserName == User.Identity.Name);
                 if (cartItem != null)
                 {
