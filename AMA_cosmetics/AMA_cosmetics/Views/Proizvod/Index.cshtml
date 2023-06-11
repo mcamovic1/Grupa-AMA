@@ -1,0 +1,114 @@
+﻿@model IEnumerable<AMA_cosmetics.Models.Proizvod>
+
+@{
+    ViewData["Title"] = "Proizvodi";
+}
+<style>
+
+    h1 {
+      color: #F8BBD0; /* Bledo roze boja */
+    }
+  </style>
+
+  <style>
+
+    a {
+      color: #C2185B; /* Bledo roze boja */
+    }
+  </style>
+
+<h1>Proizvodi</h1>
+
+<!--<p>
+    <a asp-action="Create">Create New</a>
+</p>-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cijena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kolicina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategorija)
+            </th>
+            <th>
+                Slika
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cijena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolicina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategorija)
+            </td>
+                <td>
+                    <img src="@item.SlikaPutanja" alt="@item.Naziv" style="width: 200px; height: 150px;" />
+                </td>
+            <td> 
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                        <nobr>|</nobr>
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        <nobr>|</nobr>
+ 
+                    }
+                
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> 
+                    @if (User.IsInRole("RegistrovaniKorisnik") || User.IsInRole("PremiumKorisnik"))
+                    {
+                          <nobr>|</nobr>
+                         <a asp-controller="Korpa" asp-action="Add" asp-route-id="@item.ID"><i class="fa-solid fa-bag-shopping"></i></a>
+                    }
+                   
+
+            </td>
+        </tr>
+}
+    </tbody>
+
+</table>
+
+
+<head>
+  <title>AMA COSMETICS online shop</title>
+  <style>
+    .pale-pink-button {
+      background-color: #F8BBD0;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .pale-pink-button:hover {
+      background-color: #FFCDD2;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body> 
+   @if(User.IsInRole("Administrator")){
+  <a class="pale-pink-button" href="/Proizvod/Create">Kreiraj proizvod</a> 
+   }
+</body>
+
