@@ -25,3 +25,5 @@ AMA Cosmetics Online Shop je web aplikacija koja omogućuje korisnicima pregled,
 - Ocjenjivanje proizvoda
 - Pomoć korisnicima
 
+## Aplikacija:
+http://cmelida1-001-site1.etempurl.com/
