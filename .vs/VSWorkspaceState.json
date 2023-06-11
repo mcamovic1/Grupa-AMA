@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AMA_cosmetics",
+    "\\AMA_cosmetics\\AMA_cosmetics",
+    "\\AMA_cosmetics\\AMA_cosmetics\\Views",
+    "\\AMA_cosmetics\\AMA_cosmetics\\Views\\Narudzba"
   ],
+  "SelectedNode": "\\AMA_cosmetics\\AMA_cosmetics\\Views\\Narudzba\\Create.cshtml",
   "PreviewInSolutionExplorer": false
 }
