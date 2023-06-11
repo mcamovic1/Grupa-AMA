@@ -1,0 +1,92 @@
+﻿@model AMA_cosmetics.Models.Narudzba
+
+@{
+    ViewData["Title"] = "Create";
+}
+<style>
+
+    h4 {
+      color: #F8BBD0; /* Svetlo roze boja */
+    }
+  </style>
+
+  <style>
+
+    h1 {
+      color: #C2185B; /* Bledo roze boja */
+    }
+  </style>
+  <style>
+    .dark-pink-button {
+      background-color: #F8BBD0;
+      color: #C2185B; /* Tamno roze boja */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+</style>
+
+<h1>Unesite podatke</h1>
+
+<h4>Narudžba</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ime" class="control-label"></label>
+                <input asp-for="Ime" class="form-control" />
+                <span asp-validation-for="Ime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prezime" class="control-label"></label>
+                <input asp-for="Prezime" class="form-control" />
+                <span asp-validation-for="Prezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grad" class="control-label"></label>
+                <input asp-for="Grad" class="form-control" />
+                <span asp-validation-for="Grad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adresa" class="control-label"></label>
+                <input asp-for="Adresa" class="form-control" />
+                <span asp-validation-for="Adresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojTeleona" class="control-label"></label>
+                <input asp-for="BrojTeleona" class="form-control" />
+                <span asp-validation-for="BrojTeleona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatumKreiranja" class="control-label"></label>
+                <input asp-for="DatumKreiranja" class="form-control" />
+                <span asp-validation-for="DatumKreiranja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vrsta" class="control-label"></label>
+                <select asp-for="vrsta" class="form-control">
+                    <option value="Pouzecem">Pouzecem</option>
+                    <option value="DeviznaKartica">DeviznaKartica</option>
+                    <option value="DebitnaKartica">DebitnaKartica</option>
+
+                </select>
+                <span asp-validation-for="vrsta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="dark-pink-button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Korpa" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

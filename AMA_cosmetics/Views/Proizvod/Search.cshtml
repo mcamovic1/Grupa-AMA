@@ -1,0 +1,27 @@
+﻿@model List<Proizvod>
+<style>
+
+    h2 {
+      color: #F8BBD0; /* Bledo roze boja */
+    }
+  </style>
+
+<h2>Rezultati pretrage</h2>
+
+
+@if (Model.Count > 0)
+{
+    @foreach (var Proizvod in Model)
+    {
+        <div class="product">
+            <img src="@Url.Content(Proizvod.SlikaPutanja)" alt="@Proizvod.Naziv" style="width: 200px; height: 150px;" />
+            <h3>@Proizvod.Naziv</h3>
+            <p>@Proizvod.Opis</p>
+            <p>@Proizvod.Cijena</p>
+        </div>
+    }
+}
+else
+{
+    <p>Nema rezultata za prikaz.</p>
+}
